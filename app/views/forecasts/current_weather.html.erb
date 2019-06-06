@@ -5,7 +5,15 @@
   <%= submit_tag("Search") %>
 <% end %><br>
 
-<%= @forecast %>
+<% if @forecast.dig('cod').to_i == 404 %>
+  <p>Please use a valid city name!</p>
+<% elsif @forecast.dig('cod').to_i == 400 %>
+  <p>Please type in a city name!</p>
+<% elsif @forecast == {} %>
+<% else %>
+  <p><%= "Current temperature in #{@city}: #{@forecast.dig('main', 'temp').to_i - 273}°C" %></p>
+<% end %>
+
 
 
 
