@@ -1,6 +1,11 @@
 class ForecastsController < ApplicationController
-
-  def berlin_weather
-    @forecast = OpenWeatherApi.new(@city, @options).berlin_forecast
+  
+  def current_weather
+    @city = params[:q]
+    if @city == nil
+      @forecast = ""
+    else
+      @forecast = OpenWeatherApi.new(@city).my_location_forecast
+    end
   end
 end

@@ -1,12 +1,13 @@
 class OpenWeatherApi
-  require 'open_weather'
+  include HTTParty
+  base_uri "http://api.openweathermap.org"
 
-  def initialize(city, units, appid = "e5fac07cfddbfbf985dcf1275f27ea8a")
-    @options = { units: "metric", APPID: appid }
-    @city = "Berlin"
+  def initialize(city, appid = "e5fac07cfddbfbf985dcf1275f27ea8a")
+    @options = { query: { q: city, APPID: appid } }
   end
 
-  def berlin_forecast
-    OpenWeather::Current.city(@city, @options)
+  def my_location_forecast
+    self.class.get("/data/2.5/weather", @options)
   end
 end
+

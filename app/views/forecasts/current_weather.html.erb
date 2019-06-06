@@ -1,0 +1,15 @@
+<!-- <p>Forecast: <%= @forecast %></p> -->
+
+<%= form_tag(current_weather_forecasts_path, method: :get) do %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %><br>
+
+<%= @forecast %>
+
+
+
+
+
+
+
