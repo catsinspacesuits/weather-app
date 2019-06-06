@@ -2,7 +2,7 @@ class OpenWeatherApi
   include HTTParty
   base_uri "http://api.openweathermap.org"
 
-  def initialize(city, appid = "e5fac07cfddbfbf985dcf1275f27ea8a")
+  def initialize(city, appid)
     @options = { query: { q: city, APPID: appid } }
   end
 
