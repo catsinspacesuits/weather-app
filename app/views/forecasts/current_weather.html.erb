@@ -5,14 +5,33 @@
   <%= submit_tag("Search") %>
 <% end %><br>
 
+<% temperature_messages = ["Cold af", "Not too bad...", "The sun is shining!", "Hot as hell!"] %>
+
+<% if @temperature > -100 && @temperature <= 7 %>
+  <p><%= temperature_messages[0] %></p>
+<% elsif @temperature > 7 && @temperature < 16 %>
+    <p><%= temperature_messages[1] %></p>
+<% elsif @temperature > 15 && @temperature < 27 %>
+    <p><%= temperature_messages[2] %></p>
+<% elsif @temperature > 26 %> 
+    <p><%= temperature_messages[3] %></p>
+<% else %>
+<% end %>
+
 <% if @forecast.dig('cod').to_i == 404 %>
   <p>Please use a valid city name!</p>
 <% elsif @forecast.dig('cod').to_i == 400 %>
   <p>Please type in a city name!</p>
 <% elsif @forecast == {} %>
 <% else %>
-  <p><%= "Current temperature in #{@city}: #{@forecast.dig('main', 'temp').to_i - 273}°C" %></p>
+  <p><%= "Current temperature in #{@city.capitalize} is #{@temperature}°C" %></p>
+  <%= image_tag(find_gif_url, class: "gif") %>
 <% end %>
+
+
+
+
+
 
 
 
