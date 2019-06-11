@@ -1,32 +1,26 @@
 <!-- <p>Forecast: <%= @forecast %></p> -->
+<div class="page-wrapper">
+  <h1>The weather in GIFs</h1>
 
-<%= form_tag(current_weather_forecasts_path, method: :get) do %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %><br>
+  <div class="search">
+    <%= form_tag(current_weather_forecasts_path, method: :get) do %>
+      <%= text_field_tag :q, nil, placeholder: "Enter a city", class: "search-field" %>
+      <%= submit_tag "Go!", class: "search-button" %>
+    <% end %>
+  </div>
 
-<% temperature_messages = ["Cold af", "Not too bad...", "The sun is shining!", "Hot as hell!"] %>
+  <% if @forecast.dig('cod').to_i == 404 %>
+    <p>Please use a valid city name!</p>
+  <% elsif @forecast.dig('cod').to_i == 400 %>
+    <p>Please type in a city name!</p>
+  <% elsif @forecast == {} %>
+  <% else %>
+    <p><%= "The current temperature in #{@city.capitalize} is #{@temperature}°C" %></p>
+    <%= image_tag(find_gif_url, class: "gif") %>
+  <% end %>
+</div>
 
-<% if @temperature > -100 && @temperature <= 7 %>
-  <p><%= temperature_messages[0] %></p>
-<% elsif @temperature > 7 && @temperature < 16 %>
-    <p><%= temperature_messages[1] %></p>
-<% elsif @temperature > 15 && @temperature < 27 %>
-    <p><%= temperature_messages[2] %></p>
-<% elsif @temperature > 26 %> 
-    <p><%= temperature_messages[3] %></p>
-<% else %>
-<% end %>
 
-<% if @forecast.dig('cod').to_i == 404 %>
-  <p>Please use a valid city name!</p>
-<% elsif @forecast.dig('cod').to_i == 400 %>
-  <p>Please type in a city name!</p>
-<% elsif @forecast == {} %>
-<% else %>
-  <p><%= "Current temperature in #{@city.capitalize} is #{@temperature}°C" %></p>
-  <%= image_tag(find_gif_url, class: "gif") %>
-<% end %>
 
 
 

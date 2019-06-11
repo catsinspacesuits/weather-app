@@ -34,7 +34,6 @@ module ForecastsHelper
           https://media.giphy.com/media/7zSIC0roM238CVTS4u/giphy.gif
           https://media.giphy.com/media/l0Expn6D0D3g9NExq/giphy.gif
           https://media.giphy.com/media/14d8cRr25KPxbG/giphy.gif
-          https://media.giphy.com/media/AvYn8zApyLQd2/giphy.gif
 )},
     heavy_rain:
       {codes: [502, 503, 504, 522, 531, 511],
