@@ -15,19 +15,26 @@ body h1 {
 }
 
 .gif {
-  width: 88%;
-  height: auto;
+  width: 600px;
+  height: 500px;
+}
+
+.gif-container {
+  
 }
 
 .page-wrapper {
-  margin: 0 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .search-field {
   border: 3px solid black;
   border-radius: 30px 0 0 30px;
-  width: 86%;
-  height: 60px;
+  width: 300px;
+  height: 50px;
   padding: 15px;
   font-size: 1.3rem;
   background-color: #eee;
@@ -38,8 +45,78 @@ body h1 {
   right: 10px;
   border: 3px solid black;
   border-radius: 0 30px 30px 0;
-  height: 60px;
-  width: 13%;
+  height: 50px;
+  width: 50px;
   font-size: 1.3rem;
   background-color: #3faaa5;
 }
+
+.temperature-message {
+  text-align: center;
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+.gif-container {
+  position: relative;
+}
+
+.temperature {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: 900;
+  font-size: 2.4rem;
+  color: yellow;
+  -webkit-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -moz-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -o-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+}
+
+.city {
+  position: absolute;
+  top: 0;
+  left: 200px;
+  margin: 0;
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: red;
+  -webkit-animation: moveY 7.4s linear 0s infinite alternate;
+  -moz-animation: moveY 7.4s linear 0s infinite alternate;
+  -o-animation: moveY 7.4s linear 0s infinite alternate;
+  animation: moveY 7.4s linear 0s infinite alternate;
+}
+
+
+
+// KEYFRAMES
+
+@-webkit-keyframes moveX {
+  from { left: -5px; } to { left: 525px; }
+}
+@-moz-keyframes moveX {
+  from { left: -5px; } to { left: 525px; }
+}
+@-o-keyframes moveX {
+  from { left: -5px; } to { left: 525px; }
+}
+@keyframes moveX {
+  from { left: -5px; } to { left: 525px; }
+}
+@-webkit-keyframes moveY {
+  from { top: -5px; } to { top: 465px; }
+}
+@-moz-keyframes moveY {
+  from { top: -5px; } to { top: 465px; }
+}
+@-o-keyframes moveY {
+  from { top: -5px; } to { top: 465px; }
+}
+@keyframes moveY {
+  from { top: -5px; } to { top: 465px; }
+}
+

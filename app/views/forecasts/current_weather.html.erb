@@ -15,8 +15,11 @@
     <p>Please type in a city name!</p>
   <% elsif @forecast == {} %>
   <% else %>
-    <p><%= "The current temperature in #{@city.capitalize} is #{@temperature}°C" %></p>
-    <%= image_tag(find_gif_url, class: "gif") %>
+    <p class="temperature-message"><%= "Current temperature in #{@city.capitalize} is #{@temperature}°C" %></p>
+    <div class="gif-container"><%= image_tag(find_gif_url, class: "gif") %>
+      <span class="temperature"><%= "#{@temperature}°C" %></span>
+      <span class="city"><%= "#{@city.capitalize}" %></span>
+    </div>
   <% end %>
 </div>
 
