@@ -4,6 +4,11 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+}
+
+html, body {
+    height:100%;
 }
 
 body h1 {
@@ -14,13 +19,13 @@ body h1 {
   text-align: center;
 }
 
+.title {
+  margin: 15px;
+}
+
 .gif {
   width: 600px;
   height: 500px;
-}
-
-.gif-container {
-  
 }
 
 .page-wrapper {
@@ -28,15 +33,22 @@ body h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: url('clouds.jpg');
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.search {
+  margin-bottom: 15px;
 }
 
 .search-field {
   border: 3px solid black;
   border-radius: 30px 0 0 30px;
   width: 300px;
-  height: 50px;
+  height: 35px;
   padding: 15px;
-  font-size: 1.3rem;
+  font-size: 0.8rem;
   background-color: #eee;
 }
 
@@ -45,28 +57,29 @@ body h1 {
   right: 10px;
   border: 3px solid black;
   border-radius: 0 30px 30px 0;
-  height: 50px;
-  width: 50px;
-  font-size: 1.3rem;
+  height: 36px;
+  width: 40px;
+  font-size: 0.8rem;
   background-color: #3faaa5;
-}
-
-.temperature-message {
-  text-align: center;
-  font-family: 'Julius Sans One', sans-serif;
-  font-weight: 100;
-  font-size: 1rem;
 }
 
 .gif-container {
   position: relative;
 }
 
-.temperature {
+.weather-description {
+  font-size: 1.3rem;
+  margin: 0 0 7px 0; 
+  text-align: center; 
+}
+
+.weather-attribute {
   position: absolute;
-  top: 0;
-  left: 0;
   font-family: 'Julius Sans One', sans-serif;
+  text-align: left;
+}
+
+.temperature {
   font-weight: 900;
   font-size: 2.4rem;
   color: yellow;
@@ -77,21 +90,25 @@ body h1 {
 }
 
 .city {
-  position: absolute;
-  top: 0;
   left: 200px;
   margin: 0;
-  font-family: 'Julius Sans One', sans-serif;
   font-weight: 900;
   font-size: 2.8rem;
   color: red;
-  -webkit-animation: moveY 7.4s linear 0s infinite alternate;
-  -moz-animation: moveY 7.4s linear 0s infinite alternate;
-  -o-animation: moveY 7.4s linear 0s infinite alternate;
-  animation: moveY 7.4s linear 0s infinite alternate;
+  -webkit-animation: moveY 4.4s ease-in 0s infinite alternate;
+  -moz-animation: moveY 4.4s ease-in 0s infinite alternate;
+  -o-animation: moveY 4.4s ease-in 0s infinite alternate;
+  animation: moveY 4.4s ease-in 0s infinite alternate;
 }
 
-
+.short-description {
+  color: black;
+  font-size: 2rem;
+  -webkit-animation: moveX-description 4.5s linear 0s infinite alternate, moveY-description 4.4s linear 0s infinite alternate;
+  -moz-animation: moveX-description 4.5s linear 0s infinite alternate, moveY-description 4.4s linear 0s infinite alternate;
+  -o-animation: moveX-description 4.5s linear 0s infinite alternate, moveY-description 4.4s linear 0s infinite alternate;
+  animation: moveX-description 4.5s linear 0s infinite alternate-reverse, moveY-description 4.4s linear 0s infinite alternate;
+}
 
 // KEYFRAMES
 
@@ -108,15 +125,44 @@ body h1 {
   from { left: -5px; } to { left: 525px; }
 }
 @-webkit-keyframes moveY {
-  from { top: -5px; } to { top: 465px; }
+  from { top: -5px; } to { top: 470px; }
 }
 @-moz-keyframes moveY {
-  from { top: -5px; } to { top: 465px; }
+  from { top: -5px; } to { top: 470px; }
 }
 @-o-keyframes moveY {
-  from { top: -5px; } to { top: 465px; }
+  from { top: -5px; } to { top: 470px; }
 }
 @keyframes moveY {
-  from { top: -5px; } to { top: 465px; }
+  from { top: -5px; } to { top: 470px; }
 }
+
+// left/right description
+
+@-webkit-keyframes moveX-description {
+  from { left: -5px; } to { left: 475px; }
+}
+@-moz-keyframes moveX-description {
+  from { left: -5px; } to { left: 475px; }
+}
+@-o-keyframes moveX-description {
+  from { left: -5px; } to { left: 475px; }
+}
+@keyframes moveX-description {
+  from { left: -5px; } to { left: 475px; }
+}
+@-webkit-keyframes moveY-description {
+  from { top: -5px; } to { top: 472px; }
+}
+@-moz-keyframes moveY-description {
+  from { top: -5px; } to { top: 472px; }
+}
+@-o-keyframes moveY-description {
+  from { top: -5px; } to { top: 472px; }
+}
+@keyframes moveY-description {
+  from { top: -5px; } to { top: 472px; }
+}
+
+
 
