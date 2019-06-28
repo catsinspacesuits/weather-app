@@ -21,7 +21,8 @@
     <div class="gif-container"><%= image_tag(find_gif_url, class: "gif") %>
       <span class="temperature weather-attribute"><%= "#{@temperature}°C" %></span>
       <span class="city weather-attribute"><%= @city.capitalize %></span>
-      <span class="short-description weather-attribute"><%= @short_description %></span>
+      <span class="wind weather-attribute"><%= "wind:#{(@wind * 3.6).to_i}km/h" %></span> <!-- converts to km/hr -->
+      <span class="humidity weather-attribute"><%= "humidity:#{@wind}%" %></span>
     </div>
   <% end %>
 </div>

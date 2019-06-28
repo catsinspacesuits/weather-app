@@ -1,5 +1,4 @@
 class ForecastsController < ApplicationController
-
   def current_weather
     @token = Rails.application.credentials.openweather_key
     @city = params[:q]
@@ -12,7 +11,7 @@ class ForecastsController < ApplicationController
     @weather_code = @forecast.dig('weather', 0, 'id').to_i
     @description = @forecast.dig('weather', 0, 'description')
     @short_description = @forecast.dig('weather', 0, 'main')
-    @wind = @forecast.dig('weather', 0, 'wind', 'speed')
+    @wind = @forecast.dig('wind', 'speed').to_i
     @humidity = @forecast.dig('main', 'humidity')
   end
 end

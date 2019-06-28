@@ -33,8 +33,6 @@ body h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url('clouds.jpg');
-  background-repeat: no-repeat;
   height: 100vh;
 }
 
@@ -101,13 +99,24 @@ body h1 {
   animation: moveY 4.4s ease-in 0s infinite alternate;
 }
 
-.short-description {
-  color: black;
+.humidity {
+  top: 0;
+  left: 0;
   font-size: 2rem;
-  -webkit-animation: moveX-description 4.5s linear 0s infinite alternate, moveY-description 4.4s linear 0s infinite alternate;
-  -moz-animation: moveX-description 4.5s linear 0s infinite alternate, moveY-description 4.4s linear 0s infinite alternate;
-  -o-animation: moveX-description 4.5s linear 0s infinite alternate, moveY-description 4.4s linear 0s infinite alternate;
-  animation: moveX-description 4.5s linear 0s infinite alternate-reverse, moveY-description 4.4s linear 0s infinite alternate;
+  -webkit-animation: moveX-description 3s linear 0s infinite alternate, moveY-description 6s linear 0s infinite alternate;
+  -moz-animation: moveX-description 3s linear 0s infinite alternate, moveY-description 6s linear 0s infinite alternate;
+  -o-animation: moveX-description 3s linear 0s infinite alternate, moveY-description 6s linear 0s infinite alternate;
+  animation: moveX-description 3s linear 0s infinite alternate-reverse, moveY-description 6s linear 0s infinite alternate;
+}
+
+.wind {
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+  -webkit-animation: moveX-description 3.7s linear 0s infinite alternate, moveY-description 2.5s linear 0s infinite alternate;
+  -moz-animation: moveX-description 3.7s linear 0s infinite alternate, moveY-description 2.5s linear 0s infinite alternate;
+  -o-animation: moveX-description 3.7s linear 0s infinite alternate, moveY-description 2.5s linear 0s infinite alternate;
+  animation: moveX-description 3.7s linear 0s infinite alternate-reverse, moveY-description 2.5s linear 0s infinite alternate;
 }
 
 // KEYFRAMES
@@ -140,16 +149,16 @@ body h1 {
 // left/right description
 
 @-webkit-keyframes moveX-description {
-  from { left: -5px; } to { left: 475px; }
+  from { left: -5px; } to { left: 410px; }
 }
 @-moz-keyframes moveX-description {
-  from { left: -5px; } to { left: 475px; }
+  from { left: -5px; } to { left: 410px; }
 }
 @-o-keyframes moveX-description {
-  from { left: -5px; } to { left: 475px; }
+  from { left: -5px; } to { left: 410px; }
 }
 @keyframes moveX-description {
-  from { left: -5px; } to { left: 475px; }
+  from { left: -5px; } to { left: 410px; }
 }
 @-webkit-keyframes moveY-description {
   from { top: -5px; } to { top: 472px; }
@@ -163,6 +172,16 @@ body h1 {
 @keyframes moveY-description {
   from { top: -5px; } to { top: 472px; }
 }
+
+// fade in/out
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  30% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 
 
 
