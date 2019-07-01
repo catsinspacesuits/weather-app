@@ -175,7 +175,7 @@ module ForecastsHelper
 
   def find_gif_url
     GIFS.each do |key, value|
-      if value[:codes].include? @weather_code
+      if value[:codes].include? @forecasts_facade.weather_code
         return value[:urls].sample
       end
     end
