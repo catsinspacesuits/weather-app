@@ -14,7 +14,6 @@
     <p>Please use a valid city name!</p>
   <% elsif @forecasts_facade.missing_city? %>
     <p>Please type in a city name!</p>
-  <% elsif @forecasts_facade.forecast.blank? %>
   <% else %>
     <p class="weather-description"><%= "#{@city.capitalize}: #{@forecasts_facade.description}" %></p>
     <div class="gif-container"><%= image_tag(find_gif_url, class: "gif") %>
