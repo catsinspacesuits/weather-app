@@ -1,17 +1,14 @@
 class ForecastsController < ApplicationController
+
+  TOKEN = Rails.application.credentials.openweather_key
+
   def current_weather
-    @token = Rails.application.credentials.openweather_key
     @city = params[:q]
     if @city.nil?
       @forecast = {}
     else
-      @forecast = OpenWeatherApi.new(@city, @token).my_location_forecast
+      @forecast = OpenWeatherApi.new(@city, TOKEN).my_location_forecast
     end
-    @temperature = @forecast.dig('main', 'temp').to_i - 273
-    @weather_code = @forecast.dig('weather', 0, 'id').to_i
-    @description = @forecast.dig('weather', 0, 'description')
-    @short_description = @forecast.dig('weather', 0, 'main')
-    @wind = @forecast.dig('wind', 'speed').to_i
-    @humidity = @forecast.dig('main', 'humidity')
+    @forecasts_facade = ForecastsFacade.new(@forecast)
   end
 end

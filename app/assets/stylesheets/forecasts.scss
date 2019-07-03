@@ -1,7 +1,3 @@
-// Place all the styles related to the Forecasts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -85,18 +81,6 @@ body h1 {
   -moz-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
   -o-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
   animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
-}
-
-.city {
-  left: 200px;
-  margin: 0;
-  font-weight: 900;
-  font-size: 2.8rem;
-  color: red;
-  -webkit-animation: moveY 4.4s ease-in 0s infinite alternate;
-  -moz-animation: moveY 4.4s ease-in 0s infinite alternate;
-  -o-animation: moveY 4.4s ease-in 0s infinite alternate;
-  animation: moveY 4.4s ease-in 0s infinite alternate;
 }
 
 .humidity {
