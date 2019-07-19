@@ -19,21 +19,14 @@ module ForecastsHelper
        urls: %w(
           https://media.giphy.com/media/xT9GEz2CeU9uaI2KZi/giphy.gif
           https://media.giphy.com/media/k28n1OPefBEeQ/giphy.gif
-          https://media.giphy.com/media/H1eu9Vw957Rfi/giphy.gif
           https://media.giphy.com/media/Jyeo8wBpdwpry/giphy.gif
-          https://media.giphy.com/media/d31wQXTsaJV0enNm/giphy.gif
           https://media.giphy.com/media/1Yfxps0AHRYBR2tK2G/giphy.gif
           https://media.giphy.com/media/hk6czgfmwVJS0/giphy.gif
-          https://media.giphy.com/media/26BGD4XaoPO3zTz9K/giphy.gif
           https://media.giphy.com/media/xUPGcdhiQf2vbfDCyk/giphy.gif
           https://media.giphy.com/media/26BRzrFXgu7c81Oak/giphy.gif
           https://media.giphy.com/media/3o7btWO4T2Wp97lbgc/giphy.gif
           https://media.giphy.com/media/HqUlwz5O2qkZq/giphy.gif
-          https://media.giphy.com/media/12oeJpFwY3zYwU/giphy.gif
           https://media.giphy.com/media/yPX7vux69tClG/giphy.gif
-          https://media.giphy.com/media/7zSIC0roM238CVTS4u/giphy.gif
-          https://media.giphy.com/media/l0Expn6D0D3g9NExq/giphy.gif
-          https://media.giphy.com/media/14d8cRr25KPxbG/giphy.gif
 )},
     heavy_rain:
       {codes: [502, 503, 504, 522, 531, 511],
@@ -52,8 +45,6 @@ module ForecastsHelper
           https://media.giphy.com/media/12oeJpFwY3zYwU/giphy.gif
           https://media.giphy.com/media/yPX7vux69tClG/giphy.gif
           https://media.giphy.com/media/10BaQrnrLYkJ3i/giphy.gif
-          https://media.giphy.com/media/7zSIC0roM238CVTS4u/giphy.gif
-          https://media.giphy.com/media/l0Expn6D0D3g9NExq/giphy.gif
 )},
     snow:
       {codes: [600, 601, 602, 621, 622],

@@ -20,8 +20,8 @@ body h1 {
 }
 
 .gif {
-  width: 600px;
-  height: 500px;
+  width: 700px;
+  height: 580px;
 }
 
 .page-wrapper {
@@ -62,21 +62,22 @@ body h1 {
 }
 
 .weather-description {
-  font-size: 1.3rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
   margin: 0 0 7px 0; 
   text-align: center; 
 }
 
 .weather-attribute {
   position: absolute;
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   text-align: left;
+  font-weight: 900;
 }
 
 .temperature {
-  font-weight: 900;
   font-size: 2.4rem;
-  color: yellow;
   -webkit-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
   -moz-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
   -o-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
