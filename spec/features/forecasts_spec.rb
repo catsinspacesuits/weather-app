@@ -7,6 +7,11 @@ feature 'with valid place name' do
     expect(page).to have_content('wind')
   end
 
+  scenario "with valid place name" do
+    search('London')
+    expect(page).to have_css('.gif-container')
+  end
+
   scenario 'with invalid place name' do
     search('asasdasfsdfsdfsdf')
     expect(page).to have_content('Please use a valid city name!')
