@@ -1,28 +1,29 @@
 <div class="page-wrapper">
-  <h1 class="title">The weather in GIFs</h1>
-
-  <div class="search">
-    <%= form_tag(current_weather_forecasts_path, method: :get) do %>
-      <%= text_field_tag :q, nil, placeholder: "Enter a city", class: "search-field" %>
-      <%= button_tag type: 'submit', class: "search-button" do %>
-        <i class="fas fa-search"></i>
+  <div class="container">
+    <h1 class="title">The weather in GIFs</h1>
+    <div class="search">
+      <%= form_tag(current_weather_forecasts_path, method: :get) do %>
+        <%= text_field_tag :q, nil, placeholder: "Enter a city", class: "search-field" %>
+        <%= button_tag type: 'submit', class: "search-button" do %>
+          <i class="fas fa-search"></i>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-
-  <% if @forecasts_facade.invalid_city? %>
-    <p>Please use a valid city name!</p>
-  <% elsif @forecasts_facade.missing_city? %>
-    <p>Please type in a city name!</p>
-  <% elsif @forecasts_facade.forecast == {} %>
-  <% else %>
-    <p class="weather-description"><%= "#{@city.capitalize}: #{@forecasts_facade.description}" %></p>
-    <div class="gif-container"><%= image_tag(find_gif_url, class: "gif") %>
-      <span class="temperature weather-attribute"><%= "#{@forecasts_facade.temperature}°C" %></span>
-      <span class="wind weather-attribute"><%= "wind:#{(@forecasts_facade.wind * 3.6).to_i}km/h" %></span> <!-- converts to km/hr -->
-      <span class="humidity weather-attribute"><%= "humidity:#{@forecasts_facade.humidity}%" %></span>
     </div>
-  <% end %>
+
+    <% if @forecasts_facade.invalid_city? %>
+      <p>Please use a valid city name!</p>
+    <% elsif @forecasts_facade.missing_city? %>
+      <p>Please type in a city name!</p>
+    <% elsif @forecasts_facade.forecast == {} %>
+    <% else %>
+      <p class="weather-description"><%= "#{@city.capitalize}: #{@forecasts_facade.description}" %></p>
+      <div class="gif-container"><%= image_tag(find_gif_url, class: "gif") %>
+        <span class="temperature weather-attribute"><%= "#{@forecasts_facade.temperature}°C" %></span>
+        <span class="wind weather-attribute"><%= "wind:#{(@forecasts_facade.wind * 3.6).to_i}km/h" %></span> <!-- converts to km/hr -->
+        <span class="humidity weather-attribute"><%= "humidity:#{@forecasts_facade.humidity}%" %></span>
+      </div>
+    <% end %>
+  </div>  
 </div>
 
 
