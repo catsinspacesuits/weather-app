@@ -6,7 +6,7 @@ This app allows users to search for a city/town and the weather forecast is retu
 
 You can visit the app at: https://weather-in-gifs.herokuapp.com/
 
-Ruby version 2.6.0 and Rails version 5.2.3 are used. Feature and functional test are done with RSpec and Capybara.
+Ruby version 2.6.0 and Rails version 5.2.3 are used. Feature and functional tests are done with RSpec and Capybara.
 
 
 
